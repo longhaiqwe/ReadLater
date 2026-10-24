@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+.swiftpm/
+dist/
+__pycache__/
+*.pyc
+docs/ARTICLE*.md
+docs/article-assets/
+docs/PLAN.md
+Fixtures/拖出验证/
