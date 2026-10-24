@@ -62,14 +62,14 @@ final class RailWindowController: NSObject, NSMenuDelegate {
         statusItem.menu = menu
         observers.append(NotificationCenter.default.addObserver(
             forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main
-        ) { [weak self] _ in Task { @MainActor in self?.place() } })
+        ) { [weak self] _ in Task { @MainActor [weak self] in self?.place() } })
         for (notification, open) in [(NSMenu.didBeginTrackingNotification, true), (NSMenu.didEndTrackingNotification, false)] {
             observers.append(NotificationCenter.default.addObserver(forName: notification, object: nil, queue: .main) {
-                [weak self] _ in Task { @MainActor in self?.menuOpen = open; self?.awaySince = nil }
+                [weak self] _ in Task { @MainActor [weak self] in self?.menuOpen = open; self?.awaySince = nil }
             })
         }
         let timer = Timer(timeInterval: 0.05, repeats: true) { [weak self] _ in
-            Task { @MainActor in self?.tick() }
+            Task { @MainActor [weak self] in self?.tick() }
         }
         timer.tolerance = 0.01
         RunLoop.main.add(timer, forMode: .common)

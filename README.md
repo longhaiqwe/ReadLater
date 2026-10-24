@@ -4,7 +4,7 @@
 
 ## 下载
 
-[下载稍后阅读 v0.1.0（Apple Silicon）](https://github.com/longhaiqwe/ReadLater/releases/latest/download/readlater-macos-arm64.zip) · [全部版本](https://github.com/longhaiqwe/ReadLater/releases) · [下载源码](https://github.com/longhaiqwe/ReadLater/archive/refs/tags/v0.1.0.zip)
+[下载稍后阅读 v0.1.1（Apple Silicon）](https://github.com/longhaiqwe/ReadLater/releases/latest/download/readlater-macos-arm64.zip) · [全部版本](https://github.com/longhaiqwe/ReadLater/releases) · [下载源码](https://github.com/longhaiqwe/ReadLater/archive/refs/tags/v0.1.1.zip)
 
 解压后将「稍后阅读.app」放入「应用程序」并打开。首版支持 macOS 14+，现成安装包仅适用于 Apple Silicon；Intel Mac 可尝试自行构建，尚未实机验证。本版本为 ad-hoc 签名、未做 Apple 公证，macOS 可能要求你在“隐私与安全性”中明确允许打开。请确认下载来自本仓库；不需要关闭系统整体安全保护。
 

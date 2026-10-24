@@ -9,6 +9,8 @@ import subprocess
 root = Path(__file__).resolve().parent.parent
 config = json.loads((root / 'app-config.json').read_text())
 name = config['name']
+version_file = root / 'VERSION'
+version = version_file.read_text().strip() if version_file.exists() else '0.1.0'
 if not name.strip() or any(c in name for c in '/\\\n\r\x00') or name in ('.', '..'):
     raise SystemExit('Invalid application name')
 subprocess.run(['swift', 'build', '-c', 'release'], cwd=root, check=True)
@@ -27,7 +29,7 @@ if icon.exists(): shutil.copy2(icon, resources / icon.name)
 info = {
     'CFBundleName': name, 'CFBundleDisplayName': name,
     'CFBundleIdentifier': config['bundle_id'], 'CFBundleExecutable': 'ClotheslineApp',
-    'CFBundlePackageType': 'APPL', 'CFBundleShortVersionString': '0.1.0', 'CFBundleVersion': '1',
+    'CFBundlePackageType': 'APPL', 'CFBundleShortVersionString': version, 'CFBundleVersion': str(config.get('build', 1)),
     'LSMinimumSystemVersion': '14.0', 'LSUIElement': True, 'NSHighResolutionCapable': True,
 }
 if icon.exists(): info['CFBundleIconFile'] = 'AppIcon'

@@ -1,4 +1,5 @@
 {
   "name": "稍后阅读",
-  "bundle_id": "local.clothesline.readlater"
+  "bundle_id": "local.clothesline.readlater",
+  "build": 2
 }
